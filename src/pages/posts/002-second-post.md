@@ -2,7 +2,6 @@
 title: "Second Post - Second Content"
 date: 2020-01-13 09:00:00
 author: "admin"
-path: "/second-post"
 image: ../../images/bridge.jpg
 tags:
   - code

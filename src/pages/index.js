@@ -1,44 +1,34 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
-import { Row, Col } from "reactstrap"
-import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `applicaiton`, `react`]} />
-    <h1>Home Page</h1>
-    <Row>
-      <Col md="8">
-        <StaticQuery
-          query={indexQuery}
-          render={data => {
-            return (
-              <div>
-                {data.allMarkdownRemark.edges.map(({ node }) => (
-                  <Post
-                    key={node.id}
-                    title={node.frontmatter.title}
-                    author={node.frontmatter.author}
-                    path={node.frontmatter.path}
-                    date={node.frontmatter.date}
-                    body={node.excerpt}
-                    fluid={node.frontmatter.image.childImageSharp.fluid}
-                    tags={node.frontmatter.tags}
-                  />
-                ))}
-              </div>
-            )
-          }}
-        />
-      </Col>
-      <Col md="4">
-        <Sidebar />
-      </Col>
-    </Row>
+  <Layout pageTitle="CoretanCahyo">
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
+    <StaticQuery
+      query={indexQuery}
+      render={data => {
+        return (
+          <div>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Post
+                key={node.id}
+                title={node.frontmatter.title}
+                author={node.frontmatter.author}
+                slug={node.fields.slug}
+                date={node.frontmatter.date}
+                body={node.excerpt}
+                fluid={node.frontmatter.image.childImageSharp.fluid}
+                tags={node.frontmatter.tags}
+              />
+            ))}
+          </div>
+        )
+      }}
+    />
   </Layout>
 )
 
@@ -52,7 +42,6 @@ const indexQuery = graphql`
             title
             date(formatString: "MMM Do YYYY")
             author
-            path
             tags
             image {
               childImageSharp {
@@ -61,6 +50,9 @@ const indexQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
           excerpt
         }
