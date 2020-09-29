@@ -8,17 +8,22 @@ const Sidebar = () => (
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase mb-3">
-          Newsletter
+          Dapatkan info Post terbaru
         </CardTitle>
-        <Form className="text-center">
+        <Form
+          className="text-center"
+          id="contact-form"
+          action="https://gmail.us4.list-manage.com/subscribe/post?u=6daeb5496fbb18257c6701684&amp;id=0a9c377c3a"
+          method="POST"
+          target="_blank"
+        >
           <FormGroup>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Your Email address..."
-            />
+            <Input type="email" name="email" placeholder=" Alamat email..." />
           </FormGroup>
-          <button className="btn btn-outline-success text-uppercase">
+          <button
+            className="btn btn-outline-success text-uppercase"
+            type="submit"
+          >
             Subscribe
           </button>
         </Form>
@@ -27,13 +32,15 @@ const Sidebar = () => (
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase">
-          Advertisement
+          Dapatkan penawaran terbaik
         </CardTitle>
-        <img
-          src="https://via.placeholder.com/320x200"
-          alt="Advert"
-          style={{ width: "100%" }}
-        />
+        <a href="https://prasta.id/" target="_blank">
+          <img
+            src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/120045806_161897995580011_4615415580133499675_n.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=f1j_vB-GaKcAX8rFNYy&_nc_ht=scontent-sin6-1.xx&oh=ad146f1ab18545947cb0a233ca9914d6&oe=5F97FB12"
+            alt="Advert"
+            style={{ width: "100%" }}
+          />
+        </a>
       </CardBody>
     </Card>
     <Card>
@@ -81,7 +88,6 @@ const sidebarQuery = graphql`
           id
           frontmatter {
             title
-
             image {
               childImageSharp {
                 fluid(maxWidth: 300) {

@@ -1,8 +1,11 @@
 .site-footer {
-  background-color: $white;
+  background-color: $dark-gray;
   margin-top: 20px;
   padding: 10px;
   text-align: center;
+  p {
+    color: $white;
+  }
 
   .footer-social-links {
     text-align: center;
@@ -13,7 +16,7 @@
         display: inline-block;
 
         a {
-          color: $dark-gray;
+          color: $white;
 
           &.instagram:hover {
             color: #e95950;
@@ -24,11 +27,14 @@
           &.twitter:hover {
             color: rgb(56, 161, 243);
           }
-          &.google:hover {
+          &.github:hover {
             color: rgb(221, 75, 57);
           }
           &.linkedin:hover {
             color: rgb(0, 119, 181);
+          }
+          &.youtube:hover {
+            color: rgb(238, 11, 11);
           }
         }
       }

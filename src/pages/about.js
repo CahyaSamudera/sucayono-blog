@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 const AboutPage = () => (
   <Layout pageTitle="About me">
     <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
-    <p>
+    <p className="admin-p">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos,
       vitae cum. Earum voluptates repellat pariatur veritatis omnis veniam
       voluptatum quibusdam rerum molestiae magnam ab animi iusto, ipsum commodi.
