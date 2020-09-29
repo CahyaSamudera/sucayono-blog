@@ -5,11 +5,19 @@ import SEO from "../components/seo"
 import { Badge, Card, CardBody, CardSubtitle } from "reactstrap"
 import Img from "gatsby-image"
 import { slugify } from "../util/utilityFunctions"
+import { DiscussionEmbed } from "disqus-react"
 
 const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
 
   const baseUrl = "https://sucayono.com/"
+
+  const disqusShortname = "sucayono.disqus.com"
+  const disqusConfig = {
+    identifier: data.markdownRemark.id,
+    title: post.title,
+    url: baseUrl + pageContext.slug,
+  }
   return (
     <Layout pageTitle={post.title}>
       <SEO title={post.title} />
@@ -87,6 +95,7 @@ const SinglePost = ({ data, pageContext }) => {
           </li>
         </ul>
       </div>
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </Layout>
   )
 }
