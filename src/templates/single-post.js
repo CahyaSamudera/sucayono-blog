@@ -11,7 +11,7 @@ import { DiscussionEmbed } from "disqus-react"
 const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
 
-  // const baseUrl = "https://coretancahyo.netlify.app/"
+  // let baseUrl = "https://coretancahyo.netlify.app/"
 
   // let disqusConfig = {
   //   url: `${config.baseUrl + pageContext.slug}`,
@@ -21,7 +21,7 @@ const SinglePost = ({ data, pageContext }) => {
 
   const baseUrl = "https://coretancahyo.netlify.app/"
 
-  const disqusShortname = "https-sucayono-disqus-com"
+  const disqusShortname = "sucayono-disqus-com"
   const disqusConfig = {
     identifier: data.markdownRemark.id,
     title: post.title,

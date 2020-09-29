@@ -16,12 +16,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `https-sucayono-disqus-com`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-disqus`,
+    //   options: {
+    //     shortname: `sucayono-disqus-com`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
