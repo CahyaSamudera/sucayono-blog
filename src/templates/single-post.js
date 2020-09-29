@@ -6,13 +6,22 @@ import { Badge, Card, CardBody, CardSubtitle } from "reactstrap"
 import Img from "gatsby-image"
 import { slugify } from "../util/utilityFunctions"
 import { DiscussionEmbed } from "disqus-react"
+// import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
 const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
 
+  // const baseUrl = "https://coretancahyo.netlify.app/"
+
+  // let disqusConfig = {
+  //   url: `${config.baseUrl + pageContext.slug}`,
+  //   identifier: data.markdownRemark.id,
+  //   title: post.title,
+  // }
+
   const baseUrl = "https://coretancahyo.netlify.app/"
 
-  const disqusShortname = "sucayono.disqus.com"
+  const disqusShortname = "https-sucayono-disqus-com"
   const disqusConfig = {
     identifier: data.markdownRemark.id,
     title: post.title,
@@ -21,6 +30,7 @@ const SinglePost = ({ data, pageContext }) => {
   return (
     <Layout pageTitle={post.title}>
       <SEO title={post.title} />
+      {/* <CommentCount config={disqusConfig} placeholder={"..."} /> */}
 
       <Card>
         <Img
